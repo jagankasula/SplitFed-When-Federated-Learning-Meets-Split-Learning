@@ -185,7 +185,7 @@ class ResNet18_server_side(nn.Module):
         x5 = self.layer5(x4)
         x6 = self.layer6(x5)
         
-        x7 = F.avg_pool2d(x6, 7)
+        x7 = F.avg_pool2d(x6, 2)
         x8 = x7.view(x7.size(0), -1) 
         y_hat =self.fc(x8)
         
